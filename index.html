@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="dist/style.min.css" />
+    <script src="dist/main.js" defer></script>
+
+    <title>Frontend Mentor | News homepage</title>
+  </head>
+  <body
+    class="font-inter text-[15px] text-very-dark-blue bg-white place-content-center place-items-center px-4 lg:px-0 relative"
+  >
+    <!-- Mobile menu overlay backdrop; toggled visible when nav opens -->
+    <div
+      class="hidden overlay absolute w-full h-full bg-very-dark-blue opacity-50"
+      role="presentation"
+    ></div>
+    <!-- Site header with logo, burger menu, and primary navigation -->
+    <header
+      class="container pt-7 lg:pt-22 pb-8 lg:pb-14 flex items-center justify-between lg:max-w-[69.5rem]"
+    >
+      <a class="shrink-0" href="#">
+        <img src="./assets/images/logo.svg" alt="W logo for news homepage" />
+      </a>
+
+      <!-- Mobile menu toggle button -->
+      <button
+        id="menu-toggle"
+        class="lg:hidden cursor-pointer"
+        aria-controls="nav-menu"
+        aria-expanded="false"
+      >
+        <img src="./assets/images/icon-menu.svg" alt="Open navigation menu" />
+      </button>
+      <!-- Primary navigation; becomes off-canvas on mobile -->
+      <nav
+        id="nav-menu"
+        aria-label="Main Navigation"
+        class="fixed hidden flex-col gap-21.5 lg:h-auto right-0 top-0 bg-white shadow-lg p-6 pt-7 w-[70%] h-full lg:static lg:block lg:shadow-none lg:bg-transparent lg:p-0 lg:w-auto"
+      >
+        <!-- Close button for mobile off-canvas navigation -->
+        <button
+          id="menu-close"
+          class="right-4 top-4 self-end lg:hidden cursor-pointer"
+          aria-label="Close navigation menu"
+        >
+          <img src="./assets/images/icon-menu-close.svg" alt="" />
+        </button>
+
+        <!-- Navigation links -->
+        <ul class="flex flex-col gap-4 lg:flex-row lg:gap-8">
+          <li><a class="nav-link" href="#">Home</a></li>
+          <li><a class="nav-link" href="#">New</a></li>
+          <li><a class="nav-link" href="#">Popular</a></li>
+          <li><a class="nav-link" href="#">Trending</a></li>
+          <li><a class="nav-link" href="#">Categories</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main content grid; 3-column layout on large screens -->
+    <main
+      class="container grid gap-16 lg:grid-cols-3 lg:gap-7.5 lg:gap-y-18 lg:max-w-[69.5rem]"
+    >
+      <!-- Hero / Landing section -->
+      <section class="lg:col-span-2">
+        <!-- Responsive hero image -->
+        <picture>
+          <source
+            media="(min-width: 1024px)"
+            srcset="./assets/images/image-web-3-desktop.jpg"
+          />
+          <img
+            src="./assets/images/image-web-3-mobile.jpg"
+            alt=""
+            role="presentation"
+            class="w-full lg:max-h-75 lg:max-w-[45.75rem]"
+          />
+        </picture>
+
+        <!-- Headline, description, and call-to-action -->
+        <div class="mt-6 grid gap-6 lg:grid-cols-2 lg:gap-14">
+          <h1
+            class="text-[2.5rem] leading-tight font-extrabold lg:text-[3.5rem]/[3.5rem]"
+          >
+            The Bright <br />
+            Future of <br class="hidden lg:block" />
+            Web 3.0?
+          </h1>
+          <div class="flex flex-col">
+            <p class="text-dark-grayish-blue">
+              We dive into the next evolution of the web that claims to put the
+              power of the platforms back into the hands of the people. But is
+              it really fulfilling its promise?
+            </p>
+            <button
+              type="button"
+              class="btn-primary mt-6 w-fit hover:bg-very-dark-blue hover:text-white transition-all cursor-pointer"
+            >
+              READ MORE
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- New sidebar article -->
+      <article class="bg-very-dark-blue text-off-white py-7 px-5 pb-0">
+        <h2 class="text-soft-orange text-[2rem] font-extrabold">New</h2>
+
+        <section class="py-6 border-b border-dark-grayish-blue/40">
+          <h3 class="new-item-title">Hydrogen VS Electric Cars</h3>
+          <p class="new-item-desc mt-2">
+            Will hydrogen-fueled cars ever catch up to EVs?
+          </p>
+        </section>
+        <hr class="text-grayish-blue" />
+
+        <section class="py-6 border-b border-dark-grayish-blue/40">
+          <h3 class="new-item-title">The Downsides of AI Artistry</h3>
+          <p class="new-item-desc mt-2">
+            What are the possible adverse effects of on-demand AI image
+            generation?
+          </p>
+        </section>
+        <hr class="text-grayish-blue" />
+
+        <section class="py-6">
+          <h3 class="new-item-title">Is VC Funding Drying Up?</h3>
+          <p class="new-item-desc mt-2">
+            Private funding by VC firms is down 50% YOY. We take a look at what
+            that means.
+          </p>
+        </section>
+      </article>
+
+      <!-- Top news cards -->
+      <section class="lg:col-span-3 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <article class="flex gap-6">
+          <div class="w-25 shrink-0">
+            <img
+              src="./assets/images/image-retro-pcs.jpg"
+              alt="Retro PCs image"
+              class="w-25 h-32 object-cover"
+            />
+          </div>
+          <div>
+            <h2 class="card-number">01</h2>
+            <a class="card-title mt-2" tabindex="0" href="#"
+              >Reviving Retro PCs</a
+            >
+            <p class="card-desc mt-2">
+              What happens when old PCs are given modern upgrades?
+            </p>
+          </div>
+        </article>
+
+        <article class="flex gap-6">
+          <div class="w-25 shrink-0">
+            <img
+              src="./assets/images/image-top-laptops.jpg"
+              alt="Top laptops image"
+              class="w-25 h-32 object-cover"
+            />
+          </div>
+          <div>
+            <h2 class="card-number">02</h2>
+            <a class="card-title mt-2" tabindex="0" href="#"
+              >Top 10 Laptops of 2022</a
+            >
+            <p class="card-desc mt-2">
+              Our best picks for various needs and budgets.
+            </p>
+          </div>
+        </article>
+
+        <article class="flex gap-6">
+          <div class="w-25 shrink-0">
+            <img
+              src="./assets/images/image-gaming-growth.jpg"
+              alt="Retro PCs image"
+              class="w-25 h-32 object-cover"
+            />
+          </div>
+          <div>
+            <h2 class="card-number">03</h2>
+            <a class="card-title mt-2" tabindex="0" href="#"
+              >The Growth of Gaming</a
+            >
+            <p class="card-desc mt-2">
+              How the pandemic has sparked fresh opportunities.
+            </p>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

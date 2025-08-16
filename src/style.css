@@ -1,0 +1,53 @@
+@import "tailwindcss";
+/* Import Tailwind CSS base styles */
+
+/* Tailwind v4 theme tokens mapped to root variables */
+@theme {
+  /* Font family variable */
+  --font-inter: "Inter", sans-serif;
+
+  /* Color variables for consistent theming */
+  --color-soft-orange: hsl(35, 77%, 62%);
+  --color-soft-red: hsl(5, 85%, 63%);
+  --color-off-white: hsl(36, 100%, 99%);
+  --color-grayish-blue: hsl(233, 8%, 79%);
+  --color-dark-grayish-blue: hsl(236, 13%, 42%);
+  --color-very-dark-blue: hsl(240, 100%, 5%);
+}
+
+/* Reusable component styles using Tailwind's @apply */
+
+/* Navigation link styles */
+.nav-link {
+  @apply text-dark-grayish-blue hover:text-soft-red transition-colors lg:text-[1rem] text-lg;
+}
+
+/* Primary button styles */
+.btn-primary {
+  @apply inline-block bg-soft-red text-very-dark-blue uppercase tracking-[0.2em] px-8 py-3 font-bold hover:bg-very-dark-blue;
+}
+
+/* Card title styles */
+.card-title {
+  @apply text-lg font-bold hover:text-soft-red text-very-dark-blue cursor-pointer transition-all;
+}
+
+/* Card number styles */
+.card-number {
+  @apply text-3xl font-extrabold text-soft-red;
+}
+
+/* Card description styles */
+.card-desc {
+  @apply text-dark-grayish-blue;
+}
+
+/* "New" item title styles */
+.new-item-title {
+  @apply text-off-white text-[1.25rem] font-extrabold hover:text-soft-orange cursor-pointer transition-all;
+}
+
+/* "New" item description styles */
+.new-item-desc {
+  @apply text-grayish-blue;
+}
